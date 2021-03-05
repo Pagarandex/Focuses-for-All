@@ -4,3 +4,12 @@ spriteTypes = {
 	name = "GFX_state_of_the_state"
 	texturefile = "gfx/interface/goals/focus_state_of_the_state.dds"			
 	}	
+	SpriteType = {
+	name = "GFX_oppose"
+	texturefile = "gfx/interface/goals/focus_oppose.dds"
+	}	
+	SpriteType = {
+	name = "GFX_support"
+	texturefile = "gfx/interface/goals/focus_support.dds"
+	}	
+}
