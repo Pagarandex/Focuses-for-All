@@ -1,0 +1,6 @@
+spriteTypes = {	
+
+	SpriteType = {
+	name = "GFX_state_of_the_state"
+	texturefile = "gfx/interface/goals/focus_state_of_the_state.dds"			
+	}	
