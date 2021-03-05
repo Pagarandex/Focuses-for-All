@@ -1,9 +1,0 @@
-l_english:
-### National Spirits ###
-BOL_Pro_Worker_Bil:0 "Pro Worker Legislations"
-BOL_Pro_Worker_Bil:0 "Our parliament has passed many new pro worker legislations. They now will help the working people and significantly improve our industral base."
-
-### leader traits ###
-military_appointed_president:0 "Military Appointed President"
-
-### National Focuses ###
