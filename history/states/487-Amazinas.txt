@@ -1,0 +1,25 @@
+
+state={
+	id=487
+	name="STATE_487"
+	resources={
+		rubber=8}
+	manpower = 334500
+	
+	state_category=city
+
+	history={
+		owner = BOL
+		buildings = {
+			infrastructure=4
+			industrial_complex=2
+			arms_factory =2
+		}
+		add_core_of = BOL
+	}
+
+	provinces={
+		2160 5188 8211 8240 10924 10982 10996 12902 12916 12917 12973 
+	}
+	
+}
