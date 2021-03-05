@@ -1,0 +1,156 @@
+focus_tree = {
+	id = bolivian_focus
+
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = BOL
+		}
+	}
+	focus = {
+		id = BOl_Current_Political_Situation
+		icon = n
+		x = 5
+		y = 0
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = BOl_Stay_With_The_Current_Government
+		icon = n
+		relative_position_id = BOl_Current_Political_Situation
+		mutually_exclusive = { focus = BOL_Oppose_The_Current_Government }
+		prerequisite = { focus = BOl_Current_Political_Situation }
+		x = 2
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = BOL_Oppose_The_Current_Government
+		icon = n
+		relative_position_id = BOl_Current_Political_Situation
+		prerequisite = { focus = BOl_Current_Political_Situation }
+		x = -2
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = BOL_Support_The_Labor_Movement
+		icon = n
+		relative_position_id = BOL_Oppose_The_Current_Government
+		prerequisite = { focus = BOL_Oppose_The_Current_Government }
+		x = -2
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = BOL_Pass_Pro_Worker_Legislation
+		icon = n
+		relative_position_id = BOL_Support_The_Labor_Movement
+		prerequisite = { focus = BOL_Support_The_Labor_Movement }
+		available = {
+			OR = {
+				has_government = communism
+			}
+		}
+		x = 0
+		y = 1
+		cost = 15
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = { add_ideas = BOL_Pro_Worker_Bil
+		}
+	}
+	focus = {
+		id = BOL_Build_New_Factories
+		icon = n
+		relative_position_id = BOL_Pass_Pro_Worker_Legislation
+		prerequisite = { focus = BOL_Pass_Pro_Worker_Legislation }
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = BOL_Establish_Worker_Militias
+		icon = n
+		relative_position_id = BOL_Build_New_Factories
+		prerequisite = { focus = BOL_Build_New_Factories }
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = BOL_Liberate_The_Southern_Workers
+		icon = n
+		relative_position_id = BOL_Build_New_Factories
+		prerequisite = { focus = BOL_Build_New_Factories }
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = BOL_Shatter_The_Andean_Democracies
+		icon = n
+		relative_position_id = BOL_Establish_Worker_Militias
+		prerequisite = { focus = BOL_Build_New_Factories }
+		x = -2
+		y = 0
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = BOL_Oil_For_The_Free_Not_Tyrants
+		icon = n
+		relative_position_id = BOL_Establish_Worker_Militias
+		prerequisite = { focus = BOL_Build_New_Factories }
+		x = 2
+		y = 0
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		}
+	}
+}
