@@ -12,9 +12,9 @@ focus_tree = {
 	focus = {
 		id = BOl_Current_Political_Situation
 		icon = n
-		x = 5
+		x = 15
 		y = 0
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
@@ -27,23 +27,25 @@ focus_tree = {
 		relative_position_id = BOl_Current_Political_Situation
 		mutually_exclusive = { focus = BOL_Oppose_The_Current_Government }
 		prerequisite = { focus = BOl_Current_Political_Situation }
-		x = 2
+		x = 1
 		y = 1
-		cost = 10
+		cost = 3
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
 		}
+		
 	}
 	focus = {
 		id = BOL_Oppose_The_Current_Government
 		icon = n
 		relative_position_id = BOl_Current_Political_Situation
 		prerequisite = { focus = BOl_Current_Political_Situation }
-		x = -2
+		mutually_exclusive = { focus = BOL_Oppose_The_Current_Government }
+		x = -1
 		y = 1
-		cost = 10
+		cost = 3
 		ai_will_do = {
 			factor = 1
 		}
@@ -51,32 +53,69 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = BOL_Support_The_Labor_Movement
+		id = BOL_aftermath_of_the_revolution
 		icon = n
-		relative_position_id = BOL_Oppose_The_Current_Government
-		prerequisite = { focus = BOL_Oppose_The_Current_Government }
-		x = -2
+		#relative_position_id = BOL_Support_The_Labor_Movement
+		#prerequisite = { focus = BOL_Support_The_Labor_Movement }
+		allow_branch = { has_government = communism }
+		x = 5
 		y = 1
 		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
-		completion_reward = {
-		}
+		completion_reward = { }
 	}
+	focus = {
+		id = BOL_Stabilize_The_Country
+		icon = n
+		relative_position_id = BOL_aftermath_of_the_revolution
+		prerequisite = { focus = BOL_aftermath_of_the_revolution }
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = { }
+	}
+
 	focus = {
 		id = BOL_Pass_Pro_Worker_Legislation
 		icon = n
-		relative_position_id = BOL_Support_The_Labor_Movement
-		prerequisite = { focus = BOL_Support_The_Labor_Movement }
-		available = {
-			OR = {
-				has_government = communism
-			}
-		}
+		relative_position_id =  BOL_Stabilize_The_Country
+		prerequisite = { focus = BOL_Stabilize_The_Country }
 		x = 0
 		y = 1
-		cost = 15
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = { add_ideas = BOL_Pro_Worker_Bil
+		}
+	}
+	focus = {
+		id = BOL_Womens_Emancipation
+		icon = n
+		relative_position_id =  BOL_Stabilize_The_Country
+		prerequisite = { focus = BOL_Stabilize_The_Country }
+		x = -2
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = { add_ideas = BOL_Pro_Worker_Bil
+		}
+	}
+	focus = {
+		id = BOL_New_School_System
+		icon = n
+		relative_position_id =  BOL_Stabilize_The_Country
+		prerequisite = { focus = BOL_Stabilize_The_Country }
+		x = 2
+		y = 1
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
@@ -88,7 +127,9 @@ focus_tree = {
 		icon = n
 		relative_position_id = BOL_Pass_Pro_Worker_Legislation
 		prerequisite = { focus = BOL_Pass_Pro_Worker_Legislation }
-		x = 0
+		prerequisite = { focus = BOL_New_School_System }
+		prerequisite = { focus = BOL_Womens_Emancipation }
+		x = 1
 		y = 1
 		cost = 5
 		ai_will_do = {
@@ -100,9 +141,11 @@ focus_tree = {
 	focus = {
 		id = BOL_Establish_Worker_Militias
 		icon = n
-		relative_position_id = BOL_Build_New_Factories
-		prerequisite = { focus = BOL_Build_New_Factories }
-		x = 0
+		relative_position_id = BOL_Pass_Pro_Worker_Legislation
+		prerequisite = { focus = BOL_Pass_Pro_Worker_Legislation }
+		prerequisite = { focus = BOL_New_School_System }
+		prerequisite = { focus = BOL_Womens_Emancipation }
+		x = -1
 		y = 1
 		cost = 10
 		ai_will_do = {
@@ -114,9 +157,10 @@ focus_tree = {
 	focus = {
 		id = BOL_Liberate_The_Southern_Workers
 		icon = n
-		relative_position_id = BOL_Build_New_Factories
+		relative_position_id = BOL_Establish_Worker_Militias
 		prerequisite = { focus = BOL_Build_New_Factories }
-		x = 0
+		prerequisite = { focus = BOL_Establish_Worker_Militias }
+		x = -1
 		y = 1
 		cost = 5
 		ai_will_do = {
@@ -130,8 +174,8 @@ focus_tree = {
 		icon = n
 		relative_position_id = BOL_Establish_Worker_Militias
 		prerequisite = { focus = BOL_Build_New_Factories }
-		x = -2
-		y = 0
+		x = 3
+		y = 1
 		cost = 5
 		ai_will_do = {
 			factor = 1
@@ -140,12 +184,12 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = BOL_Oil_For_The_Free_Not_Tyrants
+		id = BOL_Oil_For_The_People_Not_Tyrants
 		icon = n
 		relative_position_id = BOL_Establish_Worker_Militias
 		prerequisite = { focus = BOL_Build_New_Factories }
-		x = 2
-		y = 0
+		x = 1
+		y = 1
 		cost = 5
 		ai_will_do = {
 			factor = 1
