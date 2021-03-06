@@ -174,7 +174,7 @@ focus_tree = {
 		completion_reward = { }
 	}
 }
-#after coup c tree
+#after coup leftist tree
 focus_tree = {
 	id = after_coup_c_tree
 	default = no
@@ -235,9 +235,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-		relative_position_id = BOL_Suppresing_The_Counter_Revolution
+		relative_position_id = BOL_Crushing_Anti_Revolutionary_Officers
 		always = false
-		prerequisite = { focus = BOL_Suppresing_The_Counter_Revolution }
+		prerequisite = { focus = BOL_Crushing_Anti_Revolutionary_Officers }
 		mutually_exclusive = { focus = BOL_The_Counter_Revolution }
 		completion_reward = { 
 		}
@@ -251,11 +251,24 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-		relative_position_id = BOL_Suppresing_The_Counter_Revolution
+		relative_position_id = BOL_Crushing_Anti_Revolutionary_Officers
 		always = false
-		prerequisite = { focus = BOL_Suppresing_The_Counter_Revolution }
+		prerequisite = { focus = BOL_Crushing_Anti_Revolutionary_Officers }
 		mutually_exclusive = { focus = BOL_The_Revolution_Has_Been_Secured }
 		completion_reward = { 
+		}
+	}
+}
+#counter revolution tree com
+focus_tree = {
+	id = counter_revolution_tree_com
+	default = no
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = BOL
 		}
 	}
 focus = {
@@ -267,8 +280,9 @@ focus = {
 	ai_will_do = {
 		factor = 1
 	}
-	relative_position_id = BOL_Crushing_Anit_Revolutionary_Officers
-	prerequisite = { focus = BOL_Crushing_Anit_Revolutionary_Officers }
+	#relative_position_id = BOL_Crushing_Anit_Revolutionary_Officers
+	#prerequisite = { focus = BOL_Crushing_Anit_Revolutionary_Officers }
 	completion_reward = { add_ideas = BOL_Pro_Worker_Bil }
+	has_civil_war = no
 }
 }
