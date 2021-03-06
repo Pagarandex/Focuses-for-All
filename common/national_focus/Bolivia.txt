@@ -65,7 +65,6 @@ focus_tree = {
 		}
 		x = -1
 		y = 1
-<<<<<<< HEAD
 		cost = 10
 		ai_will_do = {
 			factor = 1
@@ -73,24 +72,6 @@ focus_tree = {
 		completion_reward = { }
 	}
 
-	focus = {
-		id = BOL_Pass_Pro_Worker_Legislation
-		icon = n
-		relative_position_id =  BOL_Stabilize_The_Country
-		prerequisite = { focus = BOL_Stabilize_The_Country }
-		allow_branch = { has_civil_war = yes  }
-		x = 0
-		y = 1
-		cost = 10
-=======
-		cost = 15
->>>>>>> 5d9c4b0bcc0a8f211230a437faaa5cd9406d10a7
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = { add_ideas = BOL_Pro_Worker_Bil
-		}
-	}
 	focus = {
 		id = BOL_Ensure_Army_Support
 		icon = n
@@ -182,14 +163,112 @@ focus_tree = {
 		id = BOl_reaproachment_with_working_class
 		icon = n
 		relative_position_id = BOl_Stay_With_The_Current_Government
-		prerequisite = { focus = BOl_Stay_With_The_Current_Government }
+		prerequisite = { focus = BOl_welfare }
+		prerequisite = { focus = BOl_crackdown_on_the_unions }
 		x = 0
 		y = 2
 		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
-		completion_reward = {
+		completion_reward = { }
+	}
+}
+#after coup c tree
+focus_tree = {
+	id = after_coup_c_tree
+	default = no
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = BOL
 		}
 	}
+	focus = {
+		id = BOL_Stabilzing_The_country
+		icon = n
+		x = 0
+		y = 1
+		cost = 2
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = { 
+		}
+	}
+	focus = {
+		id = BOL_Suppresing_The_Counter_Revolution
+		icon = n
+		x = 0
+		y = 1
+		cost = 2
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = BOL_Stabilzing_The_country
+		prerequisite = { focus = BOL_Stabilzing_The_country }
+		completion_reward = { 
+		}
+	}
+	focus = {
+		id = BOL_Crushing_Anti_Revolutionary_Officers
+		icon = n
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = BOL_Suppresing_The_Counter_Revolution
+		prerequisite = { focus = BOL_Suppresing_The_Counter_Revolution }
+		completion_reward = { 
+		}
+	}
+	focus = {
+		id = BOL_The_Revolution_Has_Been_Secured
+		icon = n
+		x = -1
+		y = 1
+		cost = 0
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = BOL_Suppresing_The_Counter_Revolution
+		always = false
+		prerequisite = { focus = BOL_Suppresing_The_Counter_Revolution }
+		mutually_exclusive = { focus = BOL_The_Counter_Revolution }
+		completion_reward = { 
+		}
+	}
+	focus = {
+		id = BOL_The_Counter_Revolution
+		icon = n
+		x = 1
+		y = 1
+		cost = 0
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = BOL_Suppresing_The_Counter_Revolution
+		always = false
+		prerequisite = { focus = BOL_Suppresing_The_Counter_Revolution }
+		mutually_exclusive = { focus = BOL_The_Revolution_Has_Been_Secured }
+		completion_reward = { 
+		}
+	}
+focus = {
+	id = BOL_Pass_Pro_Worker_Legislation
+	icon = n
+	x = 0
+	y = 1
+	cost = 5
+	ai_will_do = {
+		factor = 1
+	}
+	relative_position_id = BOL_Crushing_Anit_Revolutionary_Officers
+	prerequisite = { focus = BOL_Crushing_Anit_Revolutionary_Officers }
+	completion_reward = { add_ideas = BOL_Pro_Worker_Bil }
+}
 }

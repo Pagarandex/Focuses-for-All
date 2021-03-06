@@ -1,0 +1,19 @@
+﻿#revolution succeds
+country_event = {
+	id = bol.1
+	title = "Labor Revolution Succeeds"
+	desc = bol.1.desc
+	#For debug purposes
+	immediate = { log = "[GetDateText]: [Root.GetName]: event coa.8" }
+
+	picture = GFX_report_event_generic_parliament
+
+	is_triggered_only = yes
+
+
+	option = {
+		name = bol.1.a
+		load_focus_tree = after_coup_c_tree
+		mark_focus_tree_layout_dirty = yes
+			}
+}
