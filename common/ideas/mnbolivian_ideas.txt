@@ -1,0 +1,127 @@
+ideas = {
+	country = {
+		BOL_Pro_Worker_Bil = {
+			picture = 
+			
+			allowed = {
+				tag = BOL
+			}
+			available = { has_government = communism }
+			
+			cancel = {  }
+
+			allowed_civil_war = {
+				always = no
+			}
+			
+			modifier = {
+				consumer_goods_factor = 0.02
+				conscription_factor = 0.05
+				local_resources_factor = 0.2
+				research_speed_factor = 0.10
+				production_factory_efficiency_gain_factor = 0.1 
+				production_factory_max_efficiency_factor = 0.1
+			}
+		}
+		BOL_General_strike = {
+			picture = strike
+			
+			allowed = {
+				tag = BOL
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+			
+			modifier = {
+			consumer_goods_factor = 0.8
+			stability_weekly = -0.01
+			communism_drift = 0.02
+
+			
+			}
+		}
+		BOL_Army_mood_5 = {
+			picture = mood_5
+			
+			allowed = {
+				tag = BOL
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+			
+			modifier = {
+		    command_power_gain = 0.5
+            political_power_gain = 2
+            }
+		}
+
+		BOL_Army_mood_4 = {
+			picture = mood_4
+			
+			allowed = {
+				tag = BOL
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+			
+			modifier = {
+            political_power_gain = 1
+            }
+		}
+		BOL_Army_mood_3 = {
+			picture = mood_3
+			
+			allowed = {
+				tag = BOL
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+			
+			modifier = {
+           
+            }
+		}
+		BOL_Army_mood_2 = {
+			picture = mood_2
+			
+			allowed = {
+				tag = BOL
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+			
+			modifier = {
+            stability_factor = -0.1
+            command_power_gain = -0.5
+			political_power_gain = -2
+            }	
+		}
+	    BOL_Army_mood_1 = {
+			picture = mood_1
+			
+			allowed = {
+				tag = BOL
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+			
+			modifier = {
+            stability_factor = -0.3
+            command_power_gain = -1
+			political_power_gain = -2
+            }
+		}
+	}
+}

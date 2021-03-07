@@ -1,0 +1,80 @@
+#after coup leftist tree
+focus_tree = {
+	id = after_coup_c_tree
+	default = no
+	country = {
+		factor = 0	
+	}
+	focus = {
+		id = BOL_Stabilzing_The_country
+		icon = n
+		x = 0
+		y = 1
+		cost = 2
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = { 
+		}
+	}
+	focus = {
+		id = BOL_Suppresing_The_Counter_Revolution
+		icon = n
+		x = 0
+		y = 1
+		cost = 2
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = BOL_Stabilzing_The_country
+		prerequisite = { focus = BOL_Stabilzing_The_country }
+		completion_reward = { 
+		}
+	}
+	focus = {
+		id = BOL_Crushing_Anti_Revolutionary_Officers
+		icon = n
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = BOL_Suppresing_The_Counter_Revolution
+		prerequisite = { focus = BOL_Suppresing_The_Counter_Revolution }
+		completion_reward = { 
+		}
+	}
+	focus = {
+		id = BOL_The_Revolution_Has_Been_Secured
+		icon = n
+		x = -1
+		y = 1
+		cost = 0
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = BOL_Crushing_Anti_Revolutionary_Officers
+		always = false
+		prerequisite = { focus = BOL_Crushing_Anti_Revolutionary_Officers }
+		mutually_exclusive = { focus = BOL_The_Counter_Revolution }
+		completion_reward = { 
+		}
+	}
+	focus = {
+		id = BOL_The_Counter_Revolution
+		icon = n
+		x = 1
+		y = 1
+		cost = 0
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = BOL_Crushing_Anti_Revolutionary_Officers
+		always = false
+		prerequisite = { focus = BOL_Crushing_Anti_Revolutionary_Officers }
+		mutually_exclusive = { focus = BOL_The_Revolution_Has_Been_Secured }
+		completion_reward = { 
+		}
+	}
+}

@@ -14,11 +14,12 @@ focus_tree = {
 		icon = GFX_state_of_the_state
 		x = 5
 		y = 0
-		cost = 10
+		cost = 1
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
+		country_event = bolivia.1
 		}
 	}
 #ANTI-GOVERMENT PATH
@@ -30,6 +31,8 @@ focus_tree = {
 		mutually_exclusive = {
 		focus = BOl_Stay_With_The_Current_Government
 	}
+	    available = { has_country_flag = left }
+		bypass = { has_country_flag = left }
 		x = -2
 		y = 1
 		cost = 10
@@ -41,78 +44,81 @@ focus_tree = {
 	}
 	focus = {
 		id = BOL_Support_The_Labor_Movement
-		icon = n
+		icon = GFX_support_unions
 		relative_position_id = BOL_Oppose_The_Current_Government
 		prerequisite = { focus = BOL_Oppose_The_Current_Government }
 		x = -2
 		y = 1
-		cost = 10
+		cost = 7
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
+		add_popularity = { ideology = communism popularity = 0.15 }
 		}
 	}
 	focus = {
 		id = BOL_Organise_Unions
-		icon = n
+		icon = GFX_support_unions
 		relative_position_id = BOL_Support_The_Labor_Movement
 		prerequisite = { focus = BOL_Support_The_Labor_Movement }
-		available = {
-			OR = {
-				has_government = communism
-			}
-		}
 		x = -1
 		y = 1
-		cost = 10
+		cost = 7
 		ai_will_do = {
 			factor = 1
 		}
-		completion_reward = { }
-	}
+		completion_reward = { add_ideas = BOL_General_strike
 
+		}
+	}
 	focus = {
 		id = BOL_Ensure_Army_Support
-		icon = n
+		icon = GFX_army_support
         relative_position_id = BOL_Support_The_Labor_Movement
 		prerequisite = { focus = BOL_Support_The_Labor_Movement }
 		x = 1
 		y = 1
-		cost = 5
+		cost = 7
 		ai_will_do = {
 			factor = 1
 		}
-		completion_reward = {
+		completion_reward = {add_ideas = BOL_Army_mood_5
 		}
 	}
 	focus = {
 		id = BOL_Establish_Worker_Militias
-		icon = n
+		icon = GFX_militia
 		relative_position_id = BOL_Ensure_Army_Support
 		prerequisite = { focus = BOL_Ensure_Army_Support }
 		prerequisite = { focus = BOL_Organise_Unions }
 		x = -1
 		y = 1
-		cost = 10
+		cost = 7
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
+		add_stability = -5
+		add_manpower = -1000	
 		}
 	}
 	focus = {
 		id = BOL_Coup
-		icon = n
+		icon = GFX_coup
 		relative_position_id = BOL_Ensure_Army_Support
 		prerequisite = { focus = BOL_Establish_Worker_Militias }
+		available = {
+		has_stability <45
+	    }
 		x = -1
 		y = 2
-		cost = 10
+		cost = 1
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
+		load_focus_tree = after_coup_c_tree
 		}
 	}
 #GOVERMENT PATH
@@ -122,6 +128,8 @@ focus_tree = {
 		relative_position_id = BOl_Current_Political_Situation
 		mutually_exclusive = { focus = BOL_Oppose_The_Current_Government }
 		prerequisite = { focus = BOl_Current_Political_Situation }
+	    available = { has_country_flag = right }
+		bypass = { has_country_flag = left }
 		x = 2
 		y = 1
 		cost = 10
@@ -133,7 +141,7 @@ focus_tree = {
 	}
 	focus = {
 		id = BOl_welfare
-		icon = n
+		icon = GFX_welfare
 		relative_position_id = BOl_Stay_With_The_Current_Government
 		prerequisite = { focus = BOl_Stay_With_The_Current_Government }
 		x = 1
@@ -147,7 +155,7 @@ focus_tree = {
 	}
 	focus = {
 		id = BOl_crackdown_on_the_unions
-		icon = n
+		icon = GFX_crackdown
 		relative_position_id = BOl_Stay_With_The_Current_Government
 		prerequisite = { focus = BOl_Stay_With_The_Current_Government }
 		x = -1
@@ -161,128 +169,16 @@ focus_tree = {
 	}
 	focus = {
 		id = BOl_reaproachment_with_working_class
-		icon = n
+		icon = GFX_good_workers
 		relative_position_id = BOl_Stay_With_The_Current_Government
-		prerequisite = { focus = BOl_welfare }
-		prerequisite = { focus = BOl_crackdown_on_the_unions }
+		prerequisite = { focus = BOl_Stay_With_The_Current_Government }
 		x = 0
 		y = 2
 		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
-		completion_reward = { }
-	}
-}
-#after coup leftist tree
-focus_tree = {
-	id = after_coup_c_tree
-	default = no
-	country = {
-		factor = 0
-		
-		modifier = {
-			add = 10
-			tag = BOL
+		completion_reward = {
 		}
 	}
-	focus = {
-		id = BOL_Stabilzing_The_country
-		icon = n
-		x = 0
-		y = 1
-		cost = 2
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = { 
-		}
-	}
-	focus = {
-		id = BOL_Suppresing_The_Counter_Revolution
-		icon = n
-		x = 0
-		y = 1
-		cost = 2
-		ai_will_do = {
-			factor = 1
-		}
-		relative_position_id = BOL_Stabilzing_The_country
-		prerequisite = { focus = BOL_Stabilzing_The_country }
-		completion_reward = { 
-		}
-	}
-	focus = {
-		id = BOL_Crushing_Anti_Revolutionary_Officers
-		icon = n
-		x = 0
-		y = 1
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		relative_position_id = BOL_Suppresing_The_Counter_Revolution
-		prerequisite = { focus = BOL_Suppresing_The_Counter_Revolution }
-		completion_reward = { 
-		}
-	}
-	focus = {
-		id = BOL_The_Revolution_Has_Been_Secured
-		icon = n
-		x = -1
-		y = 1
-		cost = 0
-		ai_will_do = {
-			factor = 1
-		}
-		relative_position_id = BOL_Crushing_Anti_Revolutionary_Officers
-		always = false
-		prerequisite = { focus = BOL_Crushing_Anti_Revolutionary_Officers }
-		mutually_exclusive = { focus = BOL_The_Counter_Revolution }
-		completion_reward = { 
-		}
-	}
-	focus = {
-		id = BOL_The_Counter_Revolution
-		icon = n
-		x = 1
-		y = 1
-		cost = 0
-		ai_will_do = {
-			factor = 1
-		}
-		relative_position_id = BOL_Crushing_Anti_Revolutionary_Officers
-		always = false
-		prerequisite = { focus = BOL_Crushing_Anti_Revolutionary_Officers }
-		mutually_exclusive = { focus = BOL_The_Revolution_Has_Been_Secured }
-		completion_reward = { 
-		}
-	}
-}
-#counter revolution tree com
-focus_tree = {
-	id = counter_revolution_tree_com
-	default = no
-	country = {
-		factor = 0
-		
-		modifier = {
-			add = 10
-			tag = BOL
-		}
-	}
-focus = {
-	id = BOL_Pass_Pro_Worker_Legislation
-	icon = n
-	x = 0
-	y = 1
-	cost = 5
-	ai_will_do = {
-		factor = 1
-	}
-	#relative_position_id = BOL_Crushing_Anit_Revolutionary_Officers
-	#prerequisite = { focus = BOL_Crushing_Anit_Revolutionary_Officers }
-	completion_reward = { add_ideas = BOL_Pro_Worker_Bil }
-	has_civil_war = no
-}
 }
