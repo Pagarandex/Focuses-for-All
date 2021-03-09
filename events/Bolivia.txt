@@ -1,19 +1,37 @@
-﻿#revolution succeds
+add_namespace = bolivia
+
 country_event = {
-	id = bol.1
-	title = "Labor Revolution Succeeds"
-	desc = bol.1.desc
-	#For debug purposes
-	immediate = { log = "[GetDateText]: [Root.GetName]: event coa.8" }
+id = bolivia.1
+title = bolivia.1.t
+desc = bolivia.1.d
+picture = GFX_report_event_generic_funeral
 
-	picture = GFX_report_event_generic_parliament
+is_triggered_only = yes
 
-	is_triggered_only = yes
+option = {
+name = bolivia.1.a
+country_event = bolivia.2       
+		 }
+		 
+}
 
+country_event = {
+id = bolivia.2
+title = bolivia.2.t
+desc = bolivia.2.d
+picture = GFX_report_event_generic_funeral
 
-	option = {
-		name = bol.1.a
-		load_focus_tree = after_coup_c_tree
-		mark_focus_tree_layout_dirty = yes
-			}
+is_triggered_only = yes
+
+option = {
+name = bolivia.2.a
+set_country_flag = left #take left-wing side  
+complete_national_focus = BOL_Oppose_The_Current_Government  
+		 }
+option = {
+name = bolivia.2.b
+set_country_flag = right #take goverment side  
+complete_national_focus = BOl_Stay_With_The_Current_Government  
+		 }
+		 
 }

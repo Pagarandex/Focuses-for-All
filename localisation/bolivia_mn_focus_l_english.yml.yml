@@ -11,19 +11,3 @@
  BOl_welfare:0 "Welfare Reforms"
  BOl_crackdown_on_the_unions:0 "Crackdown on Unions"
  BOl_reaproachment_with_working_class:0 "Raprochment with the Working Class"
- BOL_Stabilzing_The_country:0 "Stabilzing The Country"
- BOL_Suppresing_The_Counter_Revolution:0 ""
- BOL_Crushing_Anti_Revolutionary_Officers:0 "Crushing Reactionary Officers"
- BOL_The_Revolution_Has_Been_Secured:0 "The Revolution Has Been Secured"
- BOL_The_Counter_Revolution:0 "The Counter Revolution"
-### National Spirits ###
-BOL_Pro_Worker_Bil:0 "Pro Worker Legislations"
-BOL_Pro_Worker_Bil_desc:0 "Our parliament has passed many new pro worker legislations. They now will help the working people and significantly improve our industral base."
-
-### leader traits ###
-military_appointed_president:0 "Military Appointed President"
-###leaders###
-POLITICS_GABEIEL_GOSALVEZ_DESC:0 ""
-#events#
-bol.1.desc "Our revloution has succeded. But the struggle of the working people is far form over. Now the fight against the real enemy begins."
-bol.1.a:0 "We cannot let the revolution fall"

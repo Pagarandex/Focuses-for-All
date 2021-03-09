@@ -12,4 +12,32 @@ spriteTypes = {
 	name = "GFX_support"
 	texturefile = "gfx/interface/goals/focus_support.dds"
 	}	
+	SpriteType = {
+	name = "GFX_coup"
+	texturefile = "gfx/interface/goals/focus_coup.dds"
+	}	
+	SpriteType = {
+	name = "GFX_militia"
+	texturefile = "gfx/interface/goals/focus_militia.dds"
+	}	
+	SpriteType = {
+	name = "GFX_support_unions"
+	texturefile = "gfx/interface/goals/focus_support_unions.dds"
+	}	
+	SpriteType = {
+	name = "GFX_army_support"
+	texturefile = "gfx/interface/goals/focus_army_support.dds"
+	}	
+	SpriteType = {
+	name = "GFX_crackdown"
+	texturefile = "gfx/interface/goals/focus_crackdown.dds"
+	}	
+	SpriteType = {
+	name = "GFX_welfare"
+	texturefile = "gfx/interface/goals/focus_welfare.dds"
+	}	
+	SpriteType = {
+	name = "GFX_good_workers"
+	texturefile = "gfx/interface/goals/focus_good_workers.dds"
+	}	
 }
