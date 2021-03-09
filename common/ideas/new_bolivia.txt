@@ -1,7 +1,7 @@
 ideas = {
 	country = {
 		BOL_Pro_Worker_Bil = {
-			picture = 
+			picture = ast_all_in
 			
 			allowed = {
 				tag = BOL
