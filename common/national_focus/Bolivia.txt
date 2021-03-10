@@ -1,6 +1,6 @@
 focus_tree = {
 	id = bolivian_focus
-
+	continuous_focus_position = { x = 50 y = 11100 }
 	country = {
 		factor = 0
 		
@@ -178,7 +178,269 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-		completion_reward = {
+		completion_reward = { }
+	}
+}
+#after coup leftist tree
+focus_tree = {
+	id = after_coup_c_tree
+	default = no
+	continuous_focus_position = { x = 50 y = 11100 }
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = BOL
 		}
 	}
+	focus = {
+		id = BOL_Stabilzing_The_country
+		icon = n
+		x = 0
+		y = 1
+		cost = 2
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = { 
+		}
+	}
+	focus = {
+		id = BOL_Suppresing_The_Counter_Revolution
+		icon = n
+		x = 0
+		y = 1
+		cost = 2
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = BOL_Stabilzing_The_country
+		prerequisite = { focus = BOL_Stabilzing_The_country }
+		completion_reward = { 
+		}
+	}
+	focus = {
+		id = BOL_Crushing_Anti_Revolutionary_Officers
+		icon = n
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = BOL_Suppresing_The_Counter_Revolution
+		prerequisite = { focus = BOL_Suppresing_The_Counter_Revolution }
+		completion_reward = { 
+		}
+	}
+	focus = {
+		id = BOL_The_Revolution_Has_Been_Secured
+		icon = n
+		x = -1
+		y = 1
+		cost = 0
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = BOL_Crushing_Anti_Revolutionary_Officers
+		always = false
+		prerequisite = { focus = BOL_Crushing_Anti_Revolutionary_Officers }
+		mutually_exclusive = { focus = BOL_The_Counter_Revolution }
+		completion_reward = { 
+		}
+	}
+	focus = {
+		id = BOL_The_Counter_Revolution
+		icon = n
+		x = 1
+		y = 1
+		cost = 0
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = BOL_Crushing_Anti_Revolutionary_Officers
+		always = false
+		prerequisite = { focus = BOL_Crushing_Anti_Revolutionary_Officers }
+		mutually_exclusive = { focus = BOL_The_Revolution_Has_Been_Secured }
+		completion_reward = { 
+		}
+	}
+}
+#counter revolution tree com
+focus_tree = {
+	id = counter_revolution_tree_com
+	default = no
+	continuous_focus_position = { x = 50 y = 11100 } 
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = BOL
+		}
+	}
+focus = {
+	id = BOL_Fight_To_The_Last_Soldier
+	icon = n
+	x = 5
+	y = 0
+	cost = 2
+	ai_will_do = {
+		factor = 1
+	}
+	completion_reward = { }
+	}
+focus = {
+	id = BOL_Soviet_Help
+	icon = n
+	x = -1
+	y = 1
+	cost = 3
+	ai_will_do = {
+		factor = 1
+	}
+	relative_position_id = BOL_Fight_To_The_Last_Soldier
+	prerequisite = { focus = BOL_Fight_To_The_Last_Soldier }
+	mutually_exclusive = { focus = BOL_Work_Against_Russian_Involvement }
+	completion_reward = { 
+	}
+	}
+focus = {
+	id = BOL_Work_Against_Russian_Involvement
+	icon = n
+	x = 1
+	y = 1
+	cost = 3
+	ai_will_do = {
+		factor = 1
+	}
+	relative_position_id = BOL_Fight_To_The_Last_Soldier
+	prerequisite = { focus = BOL_Fight_To_The_Last_Soldier }
+	completion_reward = { 
+	}
+	}
+	focus = {
+		id = BOL_Together_For_Bolivia 
+		icon = n
+		x = 1
+		y = 1
+		cost = 3
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = BOL_Work_Against_Russian_Involvement
+		prerequisite = { focus = BOL_Work_Against_Russian_Involvement }
+		completion_reward = { 
+		}
+		}	
+focus = {
+	id = BOL_Together_With_The_Soviet_People 
+	icon = n
+	x = -1
+	y = 1
+	cost = 3
+	ai_will_do = {
+		factor = 1
+	}
+	relative_position_id = BOL_Soviet_Help
+	prerequisite = { focus = BOL_Soviet_Help }
+	completion_reward = { 
+	}
+	}	
+focus = {
+	id = BOL_Destroy_The_Stalinists
+	icon = n
+	x = 0
+	y = 1
+	cost = 3
+	ai_will_do = {
+		factor = 1
+	}
+	relative_position_id = BOL_Together_For_Bolivia
+	prerequisite = { focus = BOL_Together_For_Bolivia }
+	completion_reward = { 
+	}
+	}
+focus = {
+	id = BOL_Embrace_The_Stalinism
+	icon = n
+	x = 0
+	y = 1
+	cost = 3
+	ai_will_do = {
+		factor = 1
+	}
+	relative_position_id = BOL_Together_With_The_Soviet_People
+	prerequisite = { focus = BOL_Together_With_The_Soviet_People }
+	completion_reward = { 
+	}
+}
+focus = {
+	id = BOL_The_Party_Has_Been_Unified
+	icon = n
+	x = 2
+	y = 1
+	cost = 3
+	ai_will_do = {
+		factor = 1
+	}
+	relative_position_id = BOL_Embrace_The_Stalinism
+	prerequisite = { focus = BOL_Embrace_The_Stalinism focus= BOL_Destroy_The_Stalinists }
+	completion_reward = { 
+	}
+}
+
+focus = {
+	id = BOL_And_The_Reactionaries_Destroyed
+	icon = n
+	x = 0
+	y = 1
+	cost = 3
+	ai_will_do = {
+		factor = 1
+	}
+	relative_position_id = BOL_The_Party_Has_Been_Unified
+	prerequisite = { focus = BOL_The_Party_Has_Been_Unified }
+	completion_reward = { 
+	}
+	}
+	focus = {
+		id = BOl_South_America_Will_Be_United_By_South_Ameicans
+		icon = n
+		x = 1
+		y = 1
+		cost = 2
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = { 
+		}
+		}
+	focus = {
+		id = BOL_
+		icon = n
+		x = -1
+		y = 1
+		cost = 2
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = { 
+		}
+		}
+	focus = {
+	id = BOL_Pass_Pro_Worker_Legislation
+	icon = n
+	x = 0
+	y = 1
+	cost = 5
+	ai_will_do = {
+		factor = 1
+	}
+	#relative_position_id = BOL_Crushing_Anit_Revolutionary_Officers
+	#prerequisite = { focus = BOL_Crushing_Anit_Revolutionary_Officers }
+	completion_reward = { add_ideas = BOL_Pro_Worker_Bil }
+	has_civil_war = no
+}
 }
